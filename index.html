@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.min.css">
+
+    
+    <title>Portfolio - Madhesh</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #fff;
+            background-color: #000; /* Black background */
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+        /* Navigation */
+        header {
+            background-color: #000; /* Black background */
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000; /* Red color on hover */
+        }
+
+        /* Hero Section */
+        #home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000; /* Black background */
+            color: #fff;
+            text-align: center;
+            position: relative;
+            padding-top: 60px; /* for fixed header */
+        }
+
+        #home .intro {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        #home h1 {
+            font-size: 48px;
+            color: #ff0000; /* Red color for the main heading */
+        }
+
+        #home p {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        #home .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 5px solid #ff0000; /* Red border around the image */
+        }
+
+        #home .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* About Section */
+        #about {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #111; /* Dark background */
+        }
+
+        #about h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #ff0000; /* Red color for headings */
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            color: #fff;
+        }
+
+        /* Resume Section (Education, Experience, Skills) */
+        .timeline {
+            text-align: left;
+            margin: 40px auto;
+            max-width: 800px;
+            color: #fff;
+        }
+
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-box {
+            margin-right: 10px;
+            color: #ff0000; /* Red icon color */
+        }
+
+        .h3 {
+            font-size: 28px;
+            color: #ff0000; /* Red color for section titles */
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+        }
+
+        .timeline-item-title {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .contact-title {
+            font-size: 18px;
+            color: #ff0000; /* Red color for subheadings */
+            margin-bottom: 5px;
+        }
+
+        .timeline-text {
+            color: #fff;
+        }
+
+        .skills-title {
+            font-size: 28px;
+            color: #ff0000; /* Red color for skills title */
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .skills-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-progress-bg {
+            background-color: #333;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress-fill {
+            background-color: #ff0000; /* Light green color */
+            height: 100%;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 60px 20px;
+            background-color: #000; /* Black background */
+            text-align: center;
+        }
+
+        #projects h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #ff0000; /* Red color for headings */
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            background-color: #111; /* Dark background for project cards */
+            display: inline-block;
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ff0000; /* Red border */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Red shadow on hover */
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .project p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            background-color: #111; /* Dark background */
+            text-align: center;
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #ff0000; /* Red color for headings */
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            padding: 10px 20px;
+            background-color: #ff0000; /* Red button */
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000; /* Black background */
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  color: #ff0000; /* Red color */
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: lightgreen; /* Light green color on hover */
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="profile-image">
+            <img src="C:\Users\admin\Downloads\github\nintin.png" alt="Profile Image"> <!-- Replace with your image URL -->
+        </div>
+        <div class="intro">
+            <h1>Hello, I'm Madhesh</h1>
+            <p>Cyber Security Enthusiast & Developer</p>
+        </div>
+        <!-- Social Media Icons -->
+<div class="social-media">
+    <a href="https://www.facebook.com" target="_blank" class="social-icon">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a href="https://www.twitter.com" target="_blank" class="social-icon">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+    <a href="https://www.github.com" target="_blank" class="social-icon">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </div>
+  
+    </section>
+    
+
+    
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a 3rd-year Cyber Security student with a passion for technology and innovation. I'm always eager to learn new things and take on new challenges. Here's a brief overview of my educational background, experience, and skills.</p>
+
+        <!-- Resume Section -->
+
+
+        <!-- Education Section -->
+        <section class="timeline">
+            <div class="title-wrapper">
+                <div class="icon-box">
+                    <ion-icon name="book-outline"></ion-icon>
+                </div>
+                <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">SRM Valliammai Engineering College</h4>
+                    <p class="contact-title">B.E. in Cyber Security</p>
+                    <span>2021 — 2026</span>
+                    <p class="timeline-text">
+                        Currently pursuing a degree in Cyber Security, focusing on network security, ethical hacking, and cryptography. Gaining hands-on experience in protecting digital systems and securing information.
+                    </p>
+                </li>
+
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Ramakrishna Matric Hr. Sec. School</h4>
+                    <p class="contact-title">HSC (Higher Secondary Certificate)</p>
+                    <span>2019 — 2021</span>
+                    <p class="timeline-text">
+                        Completed my Higher Secondary education with a focus on Computer Science, building a strong foundation in core subjects and developing a keen interest in technology and cybersecurity.
+                    </p>
+                </li>
+
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Ramakrishna Matric Hr. Sec. School</h4>
+                    <p class="contact-title">SSC (Secondary School Certificate)</p>
+                    <span>2019</span>
+                    <p class="timeline-text">
+                        Completed my Secondary School Certificate (SSC) with a focus on foundational subjects, fostering a strong interest in technology and laying the groundwork for my future studies in Cyber Security.
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Experience Section -->
+       
+        <!-- Skills Section -->
+        <section class="skill">
+            <h3 class="h3 skills-title">My Skills</h3>
+
+            <ul class="skills-list content-card">
+                <li class="skills-item">
+                    <div class="title-wrapper">
+                        <h5 class="h5">Web Design</h5>
+                        <data value="80">80%</data>
+                    </div>
+
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                </li>
+
+                <li class="skills-item">
+                    <div class="title-wrapper">
+                        <h5 class="h5">Graphic Design</h5>
+                        <data value="70">70%</data>
+                    </div>
+
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 70%;"></div>
+                    </div>
+                </li>
+
+                <li class="skills-item">
+                    <div class="title-wrapper">
+                        <h5 class="h5">Branding</h5>
+                        <data value="90">90%</data>
+                    </div>
+
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 90%;"></div>
+                    </div>
+                </li>
+
+                <li class="skills-item">
+                    <div class="title-wrapper">
+                        <h5 class="h5">WordPress</h5>
+                        <data value="50">50%</data>
+                    </div>
+
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 50%;"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>A brief description of the project, what technologies were used, and the outcome of the project.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>A brief description of the project, what technologies were used, and the outcome of the project.</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>A brief description of the project, what technologies were used, and the outcome of the project.</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Madhesh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Simple form validation
+            if (name && email && message) {
+                alert('Thank you for your message, ' + name + '!');
+                document.getElementById('contact-form').reset(); // Reset the form
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

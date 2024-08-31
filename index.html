@@ -7,6 +7,7 @@
     <meta name="keywords" content="Cyber Security, Developer, Portfolio, Madhesh">
     <meta name="author" content="Madhesh">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.min.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -346,26 +347,33 @@
     }
 
         /* Footer */
-        footer {
-            background-color: #004d40; /* Dark Teal */
-            color: #fff;
+         footer {
+            background-color: #f1f1f1;
+            padding: 20px;
             text-align: center;
-            padding: 15px 0;
         }
-
-        footer .social-media {
-            margin-top: 10px;
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
-
-        footer .social-media a {
-            color: #fff;
-            margin: 0 10px;
+        .social-icons li {
+            display: inline;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #333;
             font-size: 24px;
-            transition: color 0.3s ease;
         }
-
-        footer .social-media a:hover {
-            color: #009688; /* Light Teal */
+        .social-icons a:hover {
+            color: #004d40;
+        }
+        .footer-text {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
         }
 
         /* Keyframes */
@@ -508,16 +516,15 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Madhesh. All rights reserved.</p>
-        <div class="social-media">
-            <a href="https://www.linkedin.com/in/k-madhesh-a78a9b278?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEPK4TwBscqUyqJxL8GjnSihJLerHkxBN4s&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B2xbGxEDbTNm9VmCjJqc5kw%3D%3D" class="social-icon" target="_blank" rel="noopener noreferrer">    
-            </a>
-            <a href="https://github.com/kmadhesh143" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <ion-icon name="logo-github"></ion-icon>
-            </a>
-            <a href="https://instagram.com/madhesh_143" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <ion-icon name="logo-instagram"></ion-icon>
-            </a>
+     <ul class="social-icons">
+            <li><a href="https://wa.me/9080282080" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="https://www.instagram.com/madhesh_143" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/k-madhesh-a78a9b278" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/kmadhesh143" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="mailto:kmadhesh143@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+        <div class="footer-text">
+            &copy; 2024 Madhesh. All rights reserved.
         </div>
     </footer>
 

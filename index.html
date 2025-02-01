@@ -35,7 +35,7 @@
 
         /* Navigation */
         header {
-            background-color: #004d40; /* Dark Teal */
+            background-color: #3232ff; /* Dark Teal */
             color: #fff;
             padding: 15px 0;
             position: fixed;
@@ -65,7 +65,7 @@
         }
 
         nav ul li a:hover {
-            color: #009688; /* Light Teal */
+            color: #fffc32; /* Light Teal */
         }
 
         /* Page Sections */
@@ -82,7 +82,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: linear-gradient(135deg, #00796b, #004d40); /* Teal Gradient */
+            background: linear-gradient(135deg, #6a6aff, #3232ff); /* Teal Gradient */
             color: #fff;
             text-align: center;
             position: relative;
@@ -91,12 +91,12 @@
         }
 
         #home .profile-image {
-            width: 160px;
-            height: 160px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 20px;
-            border: 5px solid #009688; /* Light Teal */
+            border: 5px solid #fff; /* Light Teal */
             transition: transform 0.3s ease, border-color 0.3s ease;
             animation: scaleIn 1s ease-in-out;
         }
@@ -104,21 +104,23 @@
         #home .profile-image img {
             width: 100%;
             height: 100%;
+            font-size: larger;
             object-fit: cover;
         }
 
         #home .profile-image:hover {
             transform: scale(1.1);
-            border-color: #00796b; /* Medium Teal */
+            border-color: #fffc32; /* Medium Teal */
         }
 
         #home h1 {
             font-size: 48px;
-            color: #009688; /* Light Teal */
+            color: #fff; /* Light Teal */
             animation: fadeInUp 1s ease-in-out;
         }
 
         #home p {
+            color: #dfdfdf;
             font-size: 24px;
             margin-top: 10px;
             font-weight: 300;
@@ -134,7 +136,7 @@
         #about h2 {
             margin-bottom: 20px;
             font-size: 36px;
-            color: #00796b; /* Medium Teal */
+            color: #3232ff; /* Medium Teal */
             animation: fadeInUp 1s ease-in-out;
         }
 
@@ -146,6 +148,16 @@
         }
 
         /* Resume Section */
+        #resume {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+       #resume h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #3232ff; /* Medium Teal */
+            animation: fadeInUp 1s ease-in-out;
+        }
         .timeline {
             text-align: left;
             margin: 40px auto;
@@ -160,48 +172,74 @@
         }
 
         .icon-box {
-            margin-right: 10px;
-            color: #00796b; /* Medium Teal */
+            align-items: center;
+            font-size: large;
+            color: #fff; /* Medium Teal */
             transition: color 0.3s ease;
         }
 
         .h3 {
             font-size: 28px;
-            color: #00796b; /* Medium Teal */
+            margin-left: 20px;
+            color: #3232ff; /* Medium Teal */
         }
+        .education-container {
+    position: left;
+    align-items: start;
+    max-width: 600px;
+    margin: 10px;
+  }
 
-        .timeline-list {
-            list-style: none;
-            padding-left: 0;
-        }
+  .education-list {
+    list-style: none;
+    padding: 0;
+    position: relative;
+  }
 
-        .timeline-item {
-            margin-bottom: 30px;
-            opacity: 0;
-            animation: slideInUp 1s forwards;
-        }
+  .education-list::before {
+    content: "";
+    position: absolute;
+    left: 20px; /* Adjust based on icon size */
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #007bff; /* Line color */
+  }
 
-        .timeline-item:nth-child(odd) {
-            animation-delay: 0.5s;
-        }
+  .education-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
 
-        .timeline-item:nth-child(even) {
-            animation-delay: 1s;
-        }
+  .education-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 15px;
+  }
 
-        .timeline-item-title {
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
+  .education-item:last-child::before {
+    display: none; /* Remove line from the last item */
+  }
 
-        .timeline-text {
-            color: #333;
-        }
+  .education-content {
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
 
         /* Skills Section */
         .skills-title {
             font-size: 28px;
-            color: #00796b; /* Medium Teal */
+            color: #3232ff; /* Medium Teal */
             text-align: center;
             margin-top: 40px;
             margin-bottom: 20px;
@@ -217,10 +255,15 @@
         }
 
         .skills-item {
+            border: 1px solid #007bff;
+            padding: 10px;
+            padding-bottom: 1%;
+            border-radius: 10px;
             margin-bottom: 20px;
             opacity: 0;
             animation: fadeIn 1s forwards;
         }
+    
 
         .skills-item:nth-child(odd) {
             animation-delay: 0.5s;
@@ -234,13 +277,13 @@
             background-color: #ddd;
             width: 100%;
             height: 10px;
-            border-radius: 5px;
+            border-radius: 0px;
             margin-top: 10px;
             overflow: hidden;
         }
 
         .skill-progress-fill {
-            background-color: #00796b; /* Medium Teal */
+            background-color: #007bff; /* Medium Teal */
             height: 100%;
         }
 
@@ -253,7 +296,7 @@
         #projects h2 {
             margin-bottom: 20px;
             font-size: 36px;
-            color: #00796b; /* Medium Teal */
+            color: #3232ff; /* Medium Teal */
             animation: fadeInUp 1s ease-in-out;
         }
 
@@ -264,13 +307,18 @@
             gap: 20px;
         }
 
+        .project1 {
+  text-decoration: none; 
+  transition: transform 0.3s ease, border-color 0.3s ease;
+            animation: scaleIn 1s ease-in-out;/* Removes the default link underline */
+}
         .project {
             background-color: #f9f9f9;
             display: inline-block;
             width: 300px;
             margin: 20px;
             padding: 15px;
-            border: 1px solid #00796b; /* Medium Teal */
+            border: 2px solid #3232ff; /* Medium Teal */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -286,69 +334,16 @@
             animation-delay: 1s;
         }
 
-        .project:hover {
-            transform: scale(1.05);
+        .project1:hover {
+            transform: scale(1.1);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        #contact {
-        text-align: center;
-        animation: fadeIn 1.5s ease-in-out;
-        background-color: #ffffff;
-        padding: 60px 20px;
-    }
-
-    #contact h2 {
-        margin-bottom: 20px;
-        font-size: 36px;
-        color: #00796b; /* Medium Teal */
-        animation: fadeInUp 1s ease-in-out;
-    }
-
-    .contact-container {
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 20px;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    #contact form {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #contact input,
-    #contact textarea {
-        width: calc(100% - 22px); /* Account for padding */
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 16px;
-        animation: fadeInUp 1.5s ease-in-out;
-    }
-
-    #contact button {
-        background-color: #00796b; /* Medium Teal */
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 18px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        animation: fadeInUp 2s ease-in-out;
-    }
-
-    #contact button:hover {
-        background-color: #004d40; /* Dark Teal */
-    }
+    
 
         /* Footer */
          footer {
-            background-color: #f1f1f1;
+            background-color: #111146;
             padding: 20px;
             text-align: center;
         }
@@ -364,18 +359,35 @@
         }
         .social-icons a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
             font-size: 24px;
         }
         .social-icons a:hover {
-            color: #004d40;
+            color: #fffc32;
         }
         .footer-text {
             margin-top: 10px;
             font-size: 14px;
-            color: #555;
+            color: #fff;
         }
-
+        .social-icons1 {
+            list-style: none;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icons1 li {
+            display: inline;
+        }
+        .social-icons1 a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 34px;
+        }
+        .social-icons1 a:hover {
+            color: #fffc32;
+        }
         /* Keyframes */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -407,7 +419,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -418,38 +429,62 @@
             <img src="https://i.ibb.co/5KzhFmT/nintin.png" alt="Profile Image">
         </div>
         <div class="intro">
-            <h1>Hello, I'm Madhesh</h1>
-            <p>Cyber Security Enthusiast & Developer</p>
+            <h1>Hello, I'm <b style="color: #fffc32;">Madhesh</b></h1>
+            <p> UI/UX Designer, Web Developer & Cyber Security Enthusiast.</p>
+            <ul class="social-icons1">
+                <li><a href="https://www.linkedin.com/in/k-madhesh-a78a9b278" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/kmadhesh143" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+                <li><a href="mailto:kmadhesh143@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></li>
+            </ul>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I'm a 3rd-year Cyber Security student with a passion for technology and innovation. I'm always eager to learn new things and take on new challenges. Here's a brief overview of my educational background, experience, and skills.</p>
+        <img style="width: 240px;
+        height: 260px;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        border: 3px solid #3232ff; /* Light Teal */
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        animation: scaleIn 1s ease-in-out;" src="nintin.png"> </img>
+        <p style="font-size: 20px;"><b>I’m Madhesh,</b> <br> A 3rd-year Cyber Security student with a passion for technology and innovation. I’m always eager to learn new things and take on new challenges. Here’s a brief overview of my educational background, experience, and skills.</p>
     </section>
 
     <!-- Resume Section -->
     <section id="resume">
+        <h2>Resume</h2>
         <div class="timeline">
             <div class="title-wrapper">
-                <i class="icon-box"><ion-icon name="school-outline"></ion-icon></i>
                 <h3 class="h3">Education</h3>
             </div>
-            <ul class="timeline-list">
-                <li class="timeline-item">
-                    <div class="timeline-item-title">B.E. in Cyber Security</div>
-                    <div class="timeline-text">SRM Valliammai Engineering College, Chengalpattu - 2022-Present</div>
-                </li>
-                <li class="timeline-item">
-                    <div class="timeline-item-title">HSC</div>
-                    <div class="timeline-text">RKM School, Chengalpattu - 2021</div>
-                </li>
-                <li class="timeline-item">
-                    <div class="timeline-item-title">SSC</div>
-                    <div class="timeline-text">RKM School, Chengalpattu - 2019</div>
-                </li>
-            </ul>
+            <div class="education-container">
+                <ul class="education-list">
+                  <li class="education-item">
+                    <div class="education-icon"><i class="icon-box"><ion-icon name="school-outline"></ion-icon></i></div>
+                    <div class="education-content">
+                      <h4>SSC - RKM matric hr.sec School</h4>
+                      <p>Chengalpattu - 2019, Completed</p>
+                    </div>
+                  </li>
+                  <li class="education-item">
+                    <div class="education-icon"><i class="icon-box"><ion-icon name="school-outline"></ion-icon></i></div>
+                    <div class="education-content">
+                      <h4>HSC - RKM matric hr.sec School</h4>
+                      <p>Chengalpattu - 2021, Completed</p>
+                    </div>
+                  </li>
+                  <li class="education-item">
+                    <div class="education-icon"><i class="icon-box"><ion-icon name="school-outline"></ion-icon></i></div>
+                    <div class="education-content">
+                      <h4>B.E Cyber Security - SRM Valliammai Engineering College</h4>
+                      <p>3rd Year, Ongoing</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
         </div>
 
         <div class="timeline">
@@ -458,26 +493,27 @@
                 <h3 class="h3">Skills</h3>
             </div>
             <ul class="skills-list">
-                <li class="skills-item">JavaScript
-                    <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 90%;"></div>
-                    </div>
-                </li>
-                <li class="skills-item">Python
-                    <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 80%;"></div>
-                    </div>
-                </li>
-                <li class="skills-item">Cyber Security
-                    <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 85%;"></div>
-                    </div>
-                </li>
-                <li class="skills-item">HTML & CSS
+                 <li class="skills-item"><b>HTML & CSS - 95%</b>
                     <div class="skill-progress-bg">
                         <div class="skill-progress-fill" style="width: 95%;"></div>
                     </div>
                 </li>
+                <li class="skills-item"><b>JavaScript - 90%</b>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 90%;"></div>
+                    </div>
+                </li>
+                <li class="skills-item"><b>Python - 80%</b>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                </li>
+                <li class="skills-item"><b>Cyber Security - 85%</b>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                </li>
+               
             </ul>
         </div>
     </section>
@@ -486,39 +522,23 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-container">
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Brief description of Project 1, highlighting key features and technologies used.</p>
+            <!-- Anchor tag wraps the entire project card -->
+            <a href="https://github.com/kmadhesh143/madhesh.portfolio/" class="project1">
+                <div class="project">
+                <img style="height: 150px; width: 200px; object-fit: cover;" src="Portfolio-Desk.jpg" alt="Portfolio Image">
+                <h3 style="color: #000;">My Portfolio</h3>
+                <p style="color: #000;">Source code is available on GitHub</p>
             </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Brief description of Project 2, highlighting key features and technologies used.</p>
-            </div>
-            <div class="project">
-                <h3>Project 3</h3>
-                <p>Brief description of Project 3, highlighting key features and technologies used.</p>
-            </div>
+            </a>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-container">
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        </div>
-    </section>
+    
 
     <!-- Footer -->
     <footer>
      <ul class="social-icons">
             <li><a href="https://wa.me/9080282080" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
-            <li><a href="https://www.instagram.com/madhesh_143" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.instagram.com/its_madhesh" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
             <li><a href="https://www.linkedin.com/in/k-madhesh-a78a9b278" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://github.com/kmadhesh143" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
             <li><a href="mailto:kmadhesh143@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></li>
